@@ -1,0 +1,21 @@
+Model: ChatGPT 5.6 Sol
+Date: 9/24/26
+
+Prompt: Write a C++ program that reads lines until the user enters END and extracts the first valid IPv4 address, optionally followed by :port.
+Treat each consecutive run of digits, periods, and colons as a complete candidate. Skip other characters. Reject malformed candidates entirely rather than extracting a valid piece from inside them.
+An address must contain four octets, each 1–3 digits with a value of 0–255. A port must contain 1–5 digits with a value of 0–65535. Neither allows leading zeros except a single 0. An invalid port rejects the address too.
+Use this function:
+bool extractIPv4(const std::string& str, unsigned long& outAddress, int& outPort);
+Store the address as a 32-bit numeric value, with the first octet most significant. Return true on success and use -1 for an absent port. On failure, return false and reset the address to 0 and port to -1.
+Parse numbers manually without number-conversion functions, address-parsing libraries, or regex.
+Enter a string (or 'END' to quit):
+Success: Extracted IPv4 address: A.B.C.D (decimal value: N, port: P)
+Use “none” when there is no port.
+Failure: Invalid input: no valid IPv4 address found
+On END: Program terminated.
+Include tests for valid inputs, malformed candidates, and numeric limits.
+
+All code was AI generated
+I have checked and understand all the code that was created
+The code has been tested and runs the way I expect
+Their are no bugs that havent been resolved
